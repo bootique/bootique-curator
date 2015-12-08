@@ -1,8 +1,10 @@
 package com.nhl.zookeeper;
 
-import org.apache.cayenne.di.Binder;
-import org.apache.cayenne.di.Module;
 import org.apache.curator.framework.CuratorFramework;
+
+import com.google.inject.Binder;
+import com.google.inject.Module;
+import com.google.inject.Singleton;
 
 public class ZookeeperModule implements Module {
 
@@ -10,6 +12,6 @@ public class ZookeeperModule implements Module {
 
 	@Override
 	public void configure(Binder binder) {
-		binder.bind(CuratorFramework.class).toProvider(CuratorFrameworkProvider.class);
+		binder.bind(CuratorFramework.class).toProvider(CuratorFrameworkProvider.class).in(Singleton.class);
 	}
 }
