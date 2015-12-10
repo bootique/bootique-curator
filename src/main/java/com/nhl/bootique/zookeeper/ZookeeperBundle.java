@@ -1,11 +1,11 @@
-package com.nhl.zookeeper;
+package com.nhl.bootique.zookeeper;
 
 import org.apache.curator.framework.CuratorFramework;
 
 import com.google.inject.Binder;
 import com.google.inject.Module;
 import com.google.inject.Provides;
-import com.nhl.launcher.config.FactoryConfigurationService;
+import com.nhl.bootique.factory.FactoryConfigurationService;
 
 public class ZookeeperBundle {
 
