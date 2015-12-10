@@ -5,7 +5,7 @@ import org.apache.curator.framework.CuratorFramework;
 import com.google.inject.Binder;
 import com.google.inject.Module;
 import com.google.inject.Provides;
-import com.nhl.launcher.config.ConfigurationFactory;
+import com.nhl.launcher.config.FactoryConfigurationService;
 
 public class ZookeeperBundle {
 
@@ -37,8 +37,8 @@ public class ZookeeperBundle {
 		}
 
 		@Provides
-		public CuratorFramework createCurator(ConfigurationFactory configSource) {
-			return configSource.subconfig(configPrefix, ZookeeperConfig.class).createZkClient();
+		public CuratorFramework createCurator(FactoryConfigurationService configService) {
+			return configService.factory(ZookeeperClientFactory.class, configPrefix).createZkClient();
 		}
 	}
 }

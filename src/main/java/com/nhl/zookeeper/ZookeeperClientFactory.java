@@ -7,9 +7,9 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ZookeeperConfig {
+public class ZookeeperClientFactory {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ZookeeperConfig.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ZookeeperClientFactory.class);
 
 	private String connectString;
 
