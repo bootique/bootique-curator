@@ -1,2 +1,2 @@
 # bootique-zookeeper
-Provides Curator (Zookeeper Client) integration with Bootique
+Provides [Apache Curator](http://curator.apache.org/) (Zookeeper Client) integration with [Bootique](https://github.com/nhl/bootique)
