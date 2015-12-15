@@ -26,10 +26,6 @@ public class ZookeeperClientFactory {
 		return client;
 	}
 
-	public String getConnectString() {
-		return connectString;
-	}
-
 	public void setConnectString(String connectString) {
 		this.connectString = connectString;
 	}
