@@ -5,19 +5,19 @@
 	<parent>
 		<groupId>com.nhl.bootique.parent</groupId>
 		<artifactId>bootique-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>0.5-SNAPSHOT</version>
 	</parent>
 
 	<groupId>com.nhl.bootique.zookeeper</groupId>
 	<artifactId>bootique-zookeeper</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>0.5-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Curator (Zookeeper Client) Integration Bundle for Bootique</name>
 	<description>Provides Curator (Zookeeper Client) integration with Bootique</description>
 
 	<properties>
-		<bootique-version>1.0-SNAPSHOT</bootique-version>
+		<bootique-version>0.5-SNAPSHOT</bootique-version>
 	</properties>
 
 	<scm>
