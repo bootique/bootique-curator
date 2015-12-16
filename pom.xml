@@ -16,7 +16,7 @@
 	<description>Provides Curator (Zookeeper Client) integration with Bootique</description>
 
 	<properties>
-		<bootique-version>0.5</bootique-version>
+		<bootique-version>0.8-SNAPSHOT</bootique-version>
 	</properties>
 
 	<scm>
