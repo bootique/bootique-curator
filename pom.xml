@@ -9,7 +9,7 @@
 
 	<groupId>com.nhl.bootique.zookeeper</groupId>
 	<artifactId>bootique-zookeeper</artifactId>
-	<version>0.7-SNAPSHOT</version>
+	<version>0.7</version>
 	<packaging>jar</packaging>
 
 	<name>Curator (Zookeeper Client) Integration Bundle for Bootique</name>
@@ -22,7 +22,7 @@
 	<scm>
 		<developerConnection>scm:git:ssh://git@github.com/nhl/bootique-zookeeper</developerConnection>
 		<url>https://github.com/nhl/bootique-zookeeper</url>
-		<tag>HEAD</tag>
+		<tag>bootique-zookeeper-0.7</tag>
 	</scm>
 
 	<dependencyManagement>
