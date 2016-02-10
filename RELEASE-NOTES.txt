@@ -1,2 +1,3 @@
 0.8:
 
+#2 Upgrade do Bootique 0.12
