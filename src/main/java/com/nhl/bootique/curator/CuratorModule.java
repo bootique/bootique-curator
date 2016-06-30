@@ -1,4 +1,4 @@
-package com.nhl.bootique.zookeeper;
+package com.nhl.bootique.curator;
 
 import org.apache.curator.framework.CuratorFramework;
 
@@ -8,19 +8,19 @@ import com.nhl.bootique.config.ConfigurationFactory;
 import com.nhl.bootique.log.BootLogger;
 import com.nhl.bootique.shutdown.ShutdownManager;
 
-public class ZookeeperModule extends ConfigModule {
+public class CuratorModule extends ConfigModule {
 
-	public ZookeeperModule(String configPrefix) {
+	public CuratorModule(String configPrefix) {
 		super(configPrefix);
 	}
 
-	public ZookeeperModule() {
+	public CuratorModule() {
 	}
 
 	@Provides
 	public CuratorFramework createCurator(ConfigurationFactory configFactory, BootLogger bootLogger,
 			ShutdownManager shutdownManager) {
-		CuratorFramework client = configFactory.config(ZookeeperClientFactory.class, configPrefix).createZkClient();
+		CuratorFramework client = configFactory.config(CuratorFrameworkFactory.class, configPrefix).createZkClient();
 
 		shutdownManager.addShutdownHook(() -> {
 			bootLogger.trace(() -> "shutting down Curator...");

@@ -1,1 +1,1 @@
-com.nhl.bootique.zookeeper.ZookeeperModuleProvider
+com.nhl.bootique.curator.CuratorModuleProvider

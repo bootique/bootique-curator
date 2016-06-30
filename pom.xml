@@ -7,8 +7,8 @@
 		<version>0.10</version>
 	</parent>
 
-	<groupId>com.nhl.bootique.zookeeper</groupId>
-	<artifactId>bootique-zookeeper</artifactId>
+	<groupId>com.nhl.bootique.curator</groupId>
+	<artifactId>bootique-curator</artifactId>
 	<version>0.9-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -16,12 +16,12 @@
 	<description>Provides Curator (Zookeeper Client) integration with Bootique</description>
 
 	<properties>
-		<bootique-version>0.13-SNAPSHOT</bootique-version>
+		<bootique-version>0.18-SNAPSHOT</bootique-version>
 	</properties>
 
 	<scm>
-		<developerConnection>scm:git:ssh://git@github.com/nhl/bootique-zookeeper</developerConnection>
-		<url>https://github.com/nhl/bootique-zookeeper</url>
+		<developerConnection>scm:git:ssh://git@github.com/nhl/bootique-curator</developerConnection>
+		<url>https://github.com/nhl/bootique-curator</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -35,6 +35,11 @@
 			<dependency>
 				<groupId>com.nhl.bootique</groupId>
 				<artifactId>bootique</artifactId>
+				<version>${bootique-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nhl.bootique</groupId>
+				<artifactId>bootique-test</artifactId>
 				<version>${bootique-version}</version>
 			</dependency>
 		</dependencies>
@@ -51,6 +56,11 @@
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.nhl.bootique</groupId>
+			<artifactId>bootique-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
