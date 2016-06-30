@@ -1,6 +1,7 @@
 ## 0.9
 
 * #4 Rename to bootique-curator
+* #5 Upgrade to Bootique 0.18
 
 ## 0.8
 
