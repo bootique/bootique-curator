@@ -7,3 +7,6 @@
 
 * #1 Adding Shutdown hook
 * #2 Upgrade do Bootique 0.12
+
+
+
