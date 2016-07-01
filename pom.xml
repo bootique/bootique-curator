@@ -12,8 +12,8 @@
 	<version>0.9-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Curator (Zookeeper Client) Integration Bundle for Bootique</name>
-	<description>Provides Curator (Zookeeper Client) integration with Bootique</description>
+	<name>bootique-curator: Curator Zookeeper Client Integration with Bootique</name>
+	<description>Provides Curator Zookeeper Client integration with Bootique</description>
 
 	<properties>
 		<bootique-version>0.18-SNAPSHOT</bootique-version>
