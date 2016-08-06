@@ -1,7 +1,7 @@
-package com.nhl.bootique.curator;
+package io.bootique.curator;
 
 import com.google.inject.Module;
-import com.nhl.bootique.BQModuleProvider;
+import io.bootique.BQModuleProvider;
 
 public class CuratorModuleProvider implements BQModuleProvider {
 

@@ -1,3 +1,7 @@
+## 0.10
+
+* #6 Move to io.bootique namespace
+
 ## 0.9
 
 * #3 Exclude Log4J and SLF4J to Log4J bridge

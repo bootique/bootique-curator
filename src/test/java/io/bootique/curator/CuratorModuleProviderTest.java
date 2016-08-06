@@ -1,6 +1,6 @@
-package com.nhl.bootique.curator;
+package io.bootique.curator;
 
-import com.nhl.bootique.test.junit.BQModuleProviderChecker;
+import io.bootique.test.junit.BQModuleProviderChecker;
 import org.junit.Test;
 
 public class CuratorModuleProviderTest {

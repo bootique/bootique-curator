@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.nhl.bootique.parent</groupId>
+		<groupId>io.bootique.parent</groupId>
 		<artifactId>bootique-parent</artifactId>
-		<version>0.10</version>
+		<version>0.12</version>
 	</parent>
 
-	<groupId>com.nhl.bootique.curator</groupId>
+	<groupId>io.bootique.curator</groupId>
 	<artifactId>bootique-curator</artifactId>
 	<version>0.10-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -16,12 +16,12 @@
 	<description>Provides Curator Zookeeper Client integration with Bootique</description>
 
 	<properties>
-		<bootique-version>0.18</bootique-version>
+		<bootique-version>0.19-SNAPSHOT</bootique-version>
 	</properties>
 
 	<scm>
-		<developerConnection>scm:git:ssh://git@github.com/nhl/bootique-curator</developerConnection>
-		<url>https://github.com/nhl/bootique-curator</url>
+		<developerConnection>scm:git:ssh://git@github.com/bootique/bootique-curator</developerConnection>
+		<url>https://github.com/bootique/bootique-curator</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -50,12 +50,12 @@
 				</exclusions>
 			</dependency>
 			<dependency>
-				<groupId>com.nhl.bootique</groupId>
+				<groupId>io.bootique</groupId>
 				<artifactId>bootique</artifactId>
 				<version>${bootique-version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.nhl.bootique</groupId>
+				<groupId>io.bootique</groupId>
 				<artifactId>bootique-test</artifactId>
 				<version>${bootique-version}</version>
 			</dependency>
@@ -86,7 +86,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.nhl.bootique</groupId>
+			<groupId>io.bootique</groupId>
 			<artifactId>bootique-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -98,7 +98,7 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.nhl.bootique</groupId>
+			<groupId>io.bootique</groupId>
 			<artifactId>bootique</artifactId>
 			<scope>compile</scope>
 		</dependency>
