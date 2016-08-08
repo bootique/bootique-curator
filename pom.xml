@@ -9,7 +9,7 @@
 
 	<groupId>io.bootique.curator</groupId>
 	<artifactId>bootique-curator</artifactId>
-	<version>0.10</version>
+	<version>0.11-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>bootique-curator: Curator Zookeeper Client Integration with Bootique</name>
@@ -22,7 +22,7 @@
 	<scm>
         <developerConnection>scm:git:ssh://git@github.com/bootique/bootique-curator</developerConnection>
         <url>https://github.com/bootique/bootique-curator</url>
-        <tag>bootique-curator-0.10</tag>
+        <tag>HEAD</tag>
     </scm>
 
 	<dependencyManagement>
