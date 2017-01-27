@@ -14,15 +14,10 @@ public class CuratorFrameworkFactory {
 
     public CuratorFramework createZkClient() {
 
-        LOGGER.info("Starting CuratorFranework, connecting to Zookeeper: " + connectString);
+        LOGGER.info("Starting CuratorFramework, connecting to Zookeeper: " + connectString);
 
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(20000, 3);
-        CuratorFramework client = org.apache.curator.framework.CuratorFrameworkFactory.newClient(connectString, retryPolicy);
-
-        // TODO: ensure CuratorFramework is closed on shutdown
-        client.start();
-
-        return client;
+        return org.apache.curator.framework.CuratorFrameworkFactory.newClient(connectString, retryPolicy);
     }
 
     public void setConnectString(String connectString) {

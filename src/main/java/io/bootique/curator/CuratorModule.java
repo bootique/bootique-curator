@@ -26,6 +26,8 @@ public class CuratorModule extends ConfigModule {
 			client.close();
 		});
 
+		client.start();
+
 		return client;
 	}
 }
