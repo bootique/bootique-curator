@@ -1,3 +1,7 @@
+## 0.11
+
+* #7 Upgrade to BQ 0.21 and annotate configs
+
 ## 0.10
 
 * #6 Move to io.bootique namespace
