@@ -1,3 +1,7 @@
+## 0.12 
+
+* #8 Upgrade to Bootique 0.22 and bootique-modules-parent 0.7
+
 ## 0.11
 
 * #7 Upgrade to BQ 0.21 and annotate configs

@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>io.bootique.modules.parent</groupId>
 		<artifactId>bootique-modules-parent</artifactId>
-		<version>0.2</version>
+		<version>0.7</version>
 	</parent>
 
 	<groupId>io.bootique.curator</groupId>
@@ -16,7 +16,7 @@
 	<description>Provides Curator Zookeeper Client integration with Bootique</description>
 
 	<properties>
-		<bootique-version>0.21</bootique-version>
+		<bootique-version>0.22-SNAPSHOT</bootique-version>
 	</properties>
 
 	<scm>
@@ -62,12 +62,12 @@
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
-				<version>1.7.13</version>
+				<version>${slf4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>log4j-over-slf4j</artifactId>
-				<version>1.7.13</version>
+				<version>${slf4j.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
