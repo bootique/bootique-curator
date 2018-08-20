@@ -36,6 +36,8 @@
 
 	<properties>
 		<bootique.version>${project.version}</bootique.version>
+		<curator.verison>4.0.0</curator.verison>
+		<zookeeper.version>3.4.6</zookeeper.version>
 	</properties>
 
 	<scm>
@@ -49,22 +51,11 @@
 			<dependency>
 				<groupId>org.apache.curator</groupId>
 				<artifactId>curator-recipes</artifactId>
-				<version>2.9.1</version>
+				<version>${curator.verison}</version>
 				<exclusions>
 					<exclusion>
 						<groupId>org.slf4j</groupId>
 						<artifactId>slf4j-api</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.zookeeper</groupId>
-				<artifactId>zookeeper</artifactId>
-				<version>3.4.6</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>log4j</artifactId>
-						<groupId>log4j</groupId>
 					</exclusion>
 				</exclusions>
 			</dependency>
@@ -92,6 +83,17 @@
 	</dependencyManagement>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>${zookeeper.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
 		<!-- Unit test dependencies -->
 		<dependency>
