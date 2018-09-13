@@ -36,8 +36,8 @@
 
 	<properties>
 		<bootique.version>${project.version}</bootique.version>
-		<curator.verison>4.0.0</curator.verison>
-		<zookeeper.version>3.4.6</zookeeper.version>
+		<curator.verison>2.12.0</curator.verison>
+		<guava.version>26.0-jre</guava.version>
 	</properties>
 
 	<scm>
@@ -83,19 +83,18 @@
 	</dependencyManagement>
 
 	<dependencies>
+		<!-- Compile dependencies -->
 		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-			<version>${zookeeper.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-recipes</artifactId>
 		</dependency>
 
-		<!-- Unit test dependencies -->
+    <!-- Unit test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -110,28 +109,6 @@
 			<groupId>io.bootique</groupId>
 			<artifactId>bootique-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<!-- Compile dependencies -->
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-recipes</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>io.bootique</groupId>
-			<artifactId>bootique</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>log4j-over-slf4j</artifactId>
-			<scope>compile</scope>
 		</dependency>
 
 	</dependencies>
