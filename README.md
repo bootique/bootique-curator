@@ -19,6 +19,7 @@
 
 [![Build Status](https://travis-ci.org/bootique/bootique-curator.svg)](https://travis-ci.org/bootique/bootique-curator)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.bootique.curator/bootique-curator/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.bootique.curator/bootique-curator/)
+[![Maven Central](https://img.shields.io/maven-central/v/io.bootique.curator/bootique-curator.svg?colorB=brightgreen)](https://search.maven.org/artifact/io.bootique.curator/bootique-curator/)
 
 
 # bootique-curator
