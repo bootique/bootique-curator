@@ -1,3 +1,7 @@
+## 1.0.RC1
+
+* #12 Curator and zookeeper versions incompatibilities
+
 ## 0.25
 
 * #10 Upgrade to bootique-modules-parent 0.8
