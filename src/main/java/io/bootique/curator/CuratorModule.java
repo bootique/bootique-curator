@@ -29,26 +29,29 @@ import org.apache.curator.framework.CuratorFramework;
 
 public class CuratorModule extends ConfigModule {
 
-	public CuratorModule(String configPrefix) {
-		super(configPrefix);
-	}
+    public CuratorModule(String configPrefix) {
+        super(configPrefix);
+    }
 
-	public CuratorModule() {
-	}
+    public CuratorModule() {
+    }
 
-	@Provides
-	@Singleton
-	public CuratorFramework createCurator(ConfigurationFactory configFactory, BootLogger bootLogger,
-										  ShutdownManager shutdownManager) {
-		CuratorFramework client = configFactory.config(CuratorFrameworkFactory.class, configPrefix).createZkClient();
+    @Provides
+    @Singleton
+    public CuratorFramework createCurator(
+            ConfigurationFactory configFactory,
+            BootLogger bootLogger,
+            ShutdownManager shutdownManager) {
 
-		shutdownManager.addShutdownHook(() -> {
-			bootLogger.trace(() -> "shutting down Curator...");
-			client.close();
-		});
+        CuratorFramework client = config(CuratorFrameworkFactory.class, configFactory).createZkClient();
 
-		client.start();
+        shutdownManager.addShutdownHook(() -> {
+            bootLogger.trace(() -> "shutting down Curator...");
+            client.close();
+        });
 
-		return client;
-	}
+        client.start();
+
+        return client;
+    }
 }
