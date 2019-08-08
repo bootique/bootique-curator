@@ -1,3 +1,7 @@
+## 1.1
+
+* #14 Update zookeeper 
+
 ## 1.0.RC1
 
 * #12 Curator and zookeeper versions incompatibilities
