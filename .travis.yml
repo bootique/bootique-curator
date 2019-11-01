@@ -29,6 +29,8 @@ script:
   - mvn clean verify
 
 jobs:
+  allow_failures:
+    - jdk: openjdk-ea
   include:
     - stage: deploy
       jdk: openjdk8
