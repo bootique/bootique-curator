@@ -36,10 +36,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.testcontainers.containers.GenericContainer;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class CuratorFrameworkFactoryIT {
 
@@ -67,8 +64,8 @@ public class CuratorFrameworkFactoryIT {
 
         assertNotNull(framework);
         assertSame(framework.getState(), CuratorFrameworkState.STARTED);
-        // check that correct version of Zookeeper is used
-        assertTrue(framework.isZk34CompatibilityMode());
+        // check that correct version of Zookeeper is used. Since 2.0 Zookeeper was updated.
+        assertFalse(framework.isZk34CompatibilityMode());
     }
 
     @Test
