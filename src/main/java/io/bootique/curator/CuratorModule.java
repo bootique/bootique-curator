@@ -19,10 +19,11 @@
 
 package io.bootique.curator;
 
-import com.google.inject.Provides;
-import com.google.inject.Singleton;
+import javax.inject.Singleton;
+
 import io.bootique.ConfigModule;
 import io.bootique.config.ConfigurationFactory;
+import io.bootique.di.Provides;
 import io.bootique.log.BootLogger;
 import io.bootique.shutdown.ShutdownManager;
 import org.apache.curator.framework.CuratorFramework;
