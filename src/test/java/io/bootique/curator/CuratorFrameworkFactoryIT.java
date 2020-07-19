@@ -19,8 +19,6 @@
 
 package io.bootique.curator;
 
-import java.util.function.Consumer;
-
 import com.github.dockerjava.api.command.CreateContainerCmd;
 import com.github.dockerjava.api.model.ExposedPort;
 import com.github.dockerjava.api.model.PortBinding;
@@ -35,6 +33,8 @@ import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.testcontainers.containers.GenericContainer;
+
+import java.util.function.Consumer;
 
 import static org.junit.Assert.*;
 
@@ -64,8 +64,6 @@ public class CuratorFrameworkFactoryIT {
 
         assertNotNull(framework);
         assertSame(framework.getState(), CuratorFrameworkState.STARTED);
-        // check that correct version of Zookeeper is used. Since 2.0 Zookeeper was updated.
-        assertFalse(framework.isZk34CompatibilityMode());
     }
 
     @Test
