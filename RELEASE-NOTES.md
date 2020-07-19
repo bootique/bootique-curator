@@ -1,3 +1,7 @@
+## 2.0
+
+* #17 Upgrade to Curator to 5.1.0 
+
 ## 1.1
 
 * #14 Update zookeeper 
