@@ -24,20 +24,24 @@ import com.github.dockerjava.api.model.ExposedPort;
 import com.github.dockerjava.api.model.PortBinding;
 import com.github.dockerjava.api.model.Ports;
 import io.bootique.BQRuntime;
-import io.bootique.test.junit.BQTestFactory;
+import io.bootique.Bootique;
+import io.bootique.junit5.BQApp;
+import io.bootique.junit5.BQTest;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.imps.CuratorFrameworkState;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.apache.curator.framework.recipes.shared.SharedCount;
-import org.junit.ClassRule;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.GenericContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.function.Consumer;
 
 import static org.junit.Assert.*;
 
+@BQTest
+@Testcontainers
 public class CuratorFrameworkFactoryIT {
 
     private static final int HOST_PORT = 2181;
@@ -50,17 +54,19 @@ public class CuratorFrameworkFactoryIT {
                     )
             );
 
-    @ClassRule
+    @Container
     public static GenericContainer zookeeper = new GenericContainer("zookeeper:3.6")
             .withCreateContainerCmdModifier(MAPPING_CMD)
             .withExposedPorts(CONTAINER_EXPOSED_PORT);
 
-    @Rule
-    public BQTestFactory testFactory = new BQTestFactory();
+    @BQApp(skipRun = true)
+    static final BQRuntime app = Bootique.app("--config=classpath:config.yml")
+            .module(new CuratorModule())
+            .createRuntime();
 
     @Test
     public void testFrameworkState() {
-        CuratorFramework framework = crateCuratorFramework();
+        CuratorFramework framework = app.getInstance(CuratorFramework.class);
 
         assertNotNull(framework);
         assertSame(framework.getState(), CuratorFrameworkState.STARTED);
@@ -68,7 +74,7 @@ public class CuratorFrameworkFactoryIT {
 
     @Test
     public void testSharedCounter() throws Exception {
-        CuratorFramework framework = crateCuratorFramework();
+        CuratorFramework framework = app.getInstance(CuratorFramework.class);
 
         // test is only about correct Curator integration, so we do nothing meaningful here
         try (SharedCount count = new SharedCount(framework, "/test_counter", 123)) {
@@ -82,7 +88,7 @@ public class CuratorFrameworkFactoryIT {
 
     @Test
     public void testMutex() throws Exception {
-        CuratorFramework framework = crateCuratorFramework();
+        CuratorFramework framework = app.getInstance(CuratorFramework.class);
 
         // test is only about correct Curator integration, so we do nothing meaningful here
         InterProcessMutex mutex = new InterProcessMutex(framework, "/test_mutex");
@@ -92,13 +98,5 @@ public class CuratorFrameworkFactoryIT {
         } finally {
             mutex.release();
         }
-    }
-
-    private CuratorFramework crateCuratorFramework() {
-        BQRuntime bqRuntime = testFactory
-                .app("--config=classpath:config.yml")
-                .module(new CuratorModule())
-                .createRuntime();
-        return bqRuntime.getInstance(CuratorFramework.class);
     }
 }
