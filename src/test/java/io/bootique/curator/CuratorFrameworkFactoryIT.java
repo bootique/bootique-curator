@@ -43,7 +43,7 @@ public class CuratorFrameworkFactoryIT {
     private static final int HOST_PORT = 2181;
     private static final int CONTAINER_EXPOSED_PORT = 2181;
     private static final Consumer<CreateContainerCmd> MAPPING_CMD =
-            e -> e.withPortBindings(
+            e -> e.getHostConfig().withPortBindings(
                     new PortBinding(
                             Ports.Binding.bindPort(HOST_PORT),
                             new ExposedPort(CONTAINER_EXPOSED_PORT)
@@ -51,7 +51,7 @@ public class CuratorFrameworkFactoryIT {
             );
 
     @ClassRule
-    public static GenericContainer zookeeper = new GenericContainer("zookeeper:latest")
+    public static GenericContainer zookeeper = new GenericContainer("zookeeper:3.6")
             .withCreateContainerCmdModifier(MAPPING_CMD)
             .withExposedPorts(CONTAINER_EXPOSED_PORT);
 
@@ -71,7 +71,7 @@ public class CuratorFrameworkFactoryIT {
         CuratorFramework framework = crateCuratorFramework();
 
         // test is only about correct Curator integration, so we do nothing meaningful here
-        try(SharedCount count = new SharedCount(framework, "/test_counter", 123)) {
+        try (SharedCount count = new SharedCount(framework, "/test_counter", 123)) {
             count.start();
             assertEquals(123, count.getCount());
 
