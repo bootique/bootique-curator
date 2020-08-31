@@ -1,4 +1,4 @@
-## 2.0
+## 2.0.M1
 
 * #15 Update curator and remove old zookeeper dependency
 * #17 Upgrade to Curator to 5.1.0 
