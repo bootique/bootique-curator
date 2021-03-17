@@ -39,7 +39,7 @@
 		<curator.version>4.0.1</curator.version>
 		<zookeeper.version>3.4.14</zookeeper.version>
 		<guava.version>23.6-jre</guava.version>
-		<testcontainers.version>1.8.3</testcontainers.version>
+		<testcontainers.version>1.15.1</testcontainers.version>
 	</properties>
 
 	<scm>
