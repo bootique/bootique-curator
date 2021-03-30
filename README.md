@@ -17,7 +17,7 @@
    under the License.
   -->
 
-[![Build Status](https://travis-ci.org/bootique/bootique-curator.svg)](https://travis-ci.org/bootique/bootique-curator)
+[![build test deploy 1.x](https://github.com/bootique/bootique-curator/actions/workflows/maven-1x.yml/badge.svg)](https://github.com/bootique/bootique-curator/actions/workflows/maven-1x.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/io.bootique.curator/bootique-curator.svg?colorB=brightgreen)](https://search.maven.org/artifact/io.bootique.curator/bootique-curator/)
 
 
