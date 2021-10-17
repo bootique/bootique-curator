@@ -19,8 +19,6 @@
 
 package io.bootique.curator;
 
-import javax.inject.Singleton;
-
 import io.bootique.ConfigModule;
 import io.bootique.config.ConfigurationFactory;
 import io.bootique.di.Provides;
@@ -28,14 +26,9 @@ import io.bootique.log.BootLogger;
 import io.bootique.shutdown.ShutdownManager;
 import org.apache.curator.framework.CuratorFramework;
 
+import javax.inject.Singleton;
+
 public class CuratorModule extends ConfigModule {
-
-    public CuratorModule(String configPrefix) {
-        super(configPrefix);
-    }
-
-    public CuratorModule() {
-    }
 
     @Provides
     @Singleton
