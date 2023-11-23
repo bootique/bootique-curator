@@ -55,7 +55,7 @@ public abstract class CuratorFrameworkBaseTest {
     protected abstract GenericContainer getZk();
 
     @Test
-    public void testCurator() throws Exception {
+    public void curator() throws Exception {
         CuratorFramework framework = createRuntime().getInstance(CuratorFramework.class);
 
         testFrameworkState(framework);

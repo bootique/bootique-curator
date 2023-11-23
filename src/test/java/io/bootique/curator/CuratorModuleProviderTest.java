@@ -25,7 +25,7 @@ import org.junit.jupiter.api.Test;
 public class CuratorModuleProviderTest {
 
     @Test
-    public void testAutoLoadable() {
+    public void autoLoadable() {
         BQModuleProviderChecker.testAutoLoadable(CuratorModuleProvider.class);
     }
 }
