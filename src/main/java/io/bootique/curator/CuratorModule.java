@@ -37,7 +37,7 @@ public class CuratorModule implements BQModule, BQModuleProvider {
 
     @Override
     public BuiltModule buildModule() {
-        return BuiltModule.of(new CuratorModule())
+        return BuiltModule.of(this)
                 .provider(this)
                 .description("Integrates Apache Curator Zookeeper client")
                 .config(CONFIG_PREFIX, CuratorFrameworkFactory.class)
