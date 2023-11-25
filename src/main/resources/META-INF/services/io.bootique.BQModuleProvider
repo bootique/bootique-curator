@@ -1,1 +1,1 @@
-io.bootique.curator.CuratorModuleProvider
+io.bootique.curator.CuratorModule

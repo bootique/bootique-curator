@@ -19,8 +19,11 @@
 
 package io.bootique.curator;
 
-import io.bootique.ConfigModule;
+import io.bootique.BQModuleProvider;
+import io.bootique.bootstrap.BuiltModule;
 import io.bootique.config.ConfigurationFactory;
+import io.bootique.di.BQModule;
+import io.bootique.di.Binder;
 import io.bootique.di.Provides;
 import io.bootique.log.BootLogger;
 import io.bootique.shutdown.ShutdownManager;
@@ -28,7 +31,22 @@ import org.apache.curator.framework.CuratorFramework;
 
 import javax.inject.Singleton;
 
-public class CuratorModule extends ConfigModule {
+public class CuratorModule implements BQModule, BQModuleProvider {
+
+    private static final String CONFIG_PREFIX = "curator";
+
+    @Override
+    public BuiltModule buildModule() {
+        return BuiltModule.of(new CuratorModule())
+                .provider(this)
+                .description("Integrates Apache Curator Zookeeper client")
+                .config(CONFIG_PREFIX, CuratorFrameworkFactory.class)
+                .build();
+    }
+
+    @Override
+    public void configure(Binder binder) {
+    }
 
     @Provides
     @Singleton
@@ -37,7 +55,7 @@ public class CuratorModule extends ConfigModule {
             BootLogger bootLogger,
             ShutdownManager shutdownManager) {
 
-        CuratorFramework client = config(CuratorFrameworkFactory.class, configFactory).createZkClient();
+        CuratorFramework client = configFactory.config(CuratorFrameworkFactory.class, CONFIG_PREFIX).createZkClient();
 
         shutdownManager.addShutdownHook(() -> {
             bootLogger.trace(() -> "shutting down Curator...");

@@ -22,10 +22,10 @@ package io.bootique.curator;
 import io.bootique.junit5.BQModuleProviderChecker;
 import org.junit.jupiter.api.Test;
 
-public class CuratorModuleProviderTest {
+public class CuratorModuleTest {
 
     @Test
     public void autoLoadable() {
-        BQModuleProviderChecker.testAutoLoadable(CuratorModuleProvider.class);
+        BQModuleProviderChecker.testAutoLoadable(CuratorModule.class);
     }
 }
