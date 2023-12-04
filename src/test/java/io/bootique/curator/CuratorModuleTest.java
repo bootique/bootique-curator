@@ -19,13 +19,13 @@
 
 package io.bootique.curator;
 
-import io.bootique.junit5.BQModuleProviderChecker;
+import io.bootique.junit5.BQModuleTester;
 import org.junit.jupiter.api.Test;
 
 public class CuratorModuleTest {
 
     @Test
-    public void autoLoadable() {
-        BQModuleProviderChecker.testAutoLoadable(CuratorModule.class);
+    public void check() {
+        BQModuleTester.of(CuratorModule.class).testAutoLoadable().testConfig();
     }
 }

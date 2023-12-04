@@ -19,10 +19,9 @@
 
 package io.bootique.curator;
 
-import io.bootique.BQModuleProvider;
+import io.bootique.BQModule;
 import io.bootique.ModuleCrate;
 import io.bootique.config.ConfigurationFactory;
-import io.bootique.di.BQModule;
 import io.bootique.di.Binder;
 import io.bootique.di.Provides;
 import io.bootique.log.BootLogger;
@@ -31,14 +30,13 @@ import org.apache.curator.framework.CuratorFramework;
 
 import javax.inject.Singleton;
 
-public class CuratorModule implements BQModule, BQModuleProvider {
+public class CuratorModule implements BQModule {
 
     private static final String CONFIG_PREFIX = "curator";
 
     @Override
-    public ModuleCrate moduleCrate() {
+    public ModuleCrate crate() {
         return ModuleCrate.of(this)
-                .provider(this)
                 .description("Integrates Apache Curator Zookeeper client")
                 .config(CONFIG_PREFIX, CuratorFrameworkFactory.class)
                 .build();
