@@ -24,7 +24,6 @@ import io.bootique.ModuleCrate;
 import io.bootique.config.ConfigurationFactory;
 import io.bootique.di.Binder;
 import io.bootique.di.Provides;
-import io.bootique.log.BootLogger;
 import io.bootique.shutdown.ShutdownManager;
 import org.apache.curator.framework.CuratorFramework;
 
@@ -48,20 +47,9 @@ public class CuratorModule implements BQModule {
 
     @Provides
     @Singleton
-    public CuratorFramework createCurator(
-            ConfigurationFactory configFactory,
-            BootLogger bootLogger,
-            ShutdownManager shutdownManager) {
-
+    public CuratorFramework createCurator(ConfigurationFactory configFactory, ShutdownManager shutdownManager) {
         CuratorFramework client = configFactory.config(CuratorFrameworkFactory.class, CONFIG_PREFIX).createZkClient();
-
-        shutdownManager.addShutdownHook(() -> {
-            bootLogger.trace(() -> "shutting down Curator...");
-            client.close();
-        });
-
         client.start();
-
-        return client;
+        return shutdownManager.onShutdown(client);
     }
 }
