@@ -34,7 +34,7 @@ public class CuratorFrameworkFactory {
 
     private String connectString;
 
-    public CuratorFramework createZkClient() {
+    public CuratorFramework create() {
 
         LOGGER.info("Starting CuratorFramework, connecting to Zookeeper: " + connectString);
 

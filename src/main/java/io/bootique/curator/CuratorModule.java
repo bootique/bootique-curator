@@ -48,7 +48,7 @@ public class CuratorModule implements BQModule {
     @Provides
     @Singleton
     public CuratorFramework createCurator(ConfigurationFactory configFactory, ShutdownManager shutdownManager) {
-        CuratorFramework client = configFactory.config(CuratorFrameworkFactory.class, CONFIG_PREFIX).createZkClient();
+        CuratorFramework client = configFactory.config(CuratorFrameworkFactory.class, CONFIG_PREFIX).create();
         client.start();
         return shutdownManager.onShutdown(client);
     }
