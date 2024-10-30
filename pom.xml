@@ -81,6 +81,11 @@
 						<groupId>org.junit.jupiter</groupId>
 						<artifactId>junit-jupiter-api</artifactId>
 					</exclusion>
+					<!-- CVE's against 1.24.0, need a newer version ... or just not use it at all, as it is not needed in the tests -->
+					<exclusion>
+						<groupId>org.apache.commons</groupId>
+						<artifactId>commons-compress</artifactId>
+					</exclusion>
 				</exclusions>
 			</dependency>
 			<dependency>
