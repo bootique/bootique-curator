@@ -1,3 +1,7 @@
+## 3.0-M5
+
+* #19 Update transitive "com.google.guava:guava" dependency to 33.1.0-jre
+
 ## 3.0-M4
 
 * #18 Upgrade to curator 5.6.0

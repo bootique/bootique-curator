@@ -37,6 +37,7 @@
 	<properties>
 		<bootique.version>${project.version}</bootique.version>
 		<curator.version>5.6.0</curator.version>
+		<guava.version>33.1.0-jre</guava.version>
 	</properties>
 
 	<scm>
@@ -60,7 +61,16 @@
 						<artifactId>log4j</artifactId>
 						<groupId>log4j</groupId>
 					</exclusion>
+					<exclusion>
+						<groupId>com.google.guava</groupId>
+						<artifactId>guava</artifactId>
+					</exclusion>
 				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.bootique</groupId>
@@ -111,6 +121,10 @@
 		<dependency>
 			<groupId>org.apache.curator</groupId>
 			<artifactId>curator-recipes</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.bootique</groupId>
