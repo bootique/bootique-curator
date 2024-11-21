@@ -1,4 +1,4 @@
-## 3.0-M5
+## 3.0-M6
 
 * #19 Update transitive "com.google.guava:guava" dependency to 33.1.0-jre
 
