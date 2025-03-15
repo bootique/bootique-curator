@@ -27,7 +27,7 @@ import io.bootique.di.Provides;
 import io.bootique.shutdown.ShutdownManager;
 import org.apache.curator.framework.CuratorFramework;
 
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 
 public class CuratorModule implements BQModule {
 
