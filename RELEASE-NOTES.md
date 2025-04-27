@@ -1,3 +1,7 @@
+## 4.0-M1
+
+* #20 Upgrade to Curator 5.8.0 and ZK 3.9.3
+
 ## 3.0-M6
 
 * #19 Update transitive "com.google.guava:guava" dependency to 33.1.0-jre
