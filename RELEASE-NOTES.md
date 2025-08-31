@@ -1,3 +1,7 @@
+## 4.0-M2
+
+* #21 Upgrade to Curator 5.9.0 and ZK 3.9.4
+
 ## 4.0-M1
 
 * #20 Upgrade to Curator 5.8.0 and ZK 3.9.3
