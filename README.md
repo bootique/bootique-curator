@@ -20,7 +20,6 @@
 [![build test deploy](https://github.com/bootique/bootique-curator/actions/workflows/maven.yml/badge.svg)](https://github.com/bootique/bootique-curator/actions/workflows/maven.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/io.bootique.curator/bootique-curator.svg?colorB=brightgreen)](https://search.maven.org/artifact/io.bootique.curator/bootique-curator/)
 
-
 # bootique-curator
 Provides [Apache Curator](http://curator.apache.org/) (Zookeeper Client) integration with [Bootique](http://bootoque.io).
 
