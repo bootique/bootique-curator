@@ -1,6 +1,7 @@
 ## 3.0-RC2
 
 * #22 [3.x] Upgrade to Curator 5.9.0 and ZK 3.9.4
+* #23 Upgrade Netty to 4.1.130.Final
 
 ## 3.0-M6
 
