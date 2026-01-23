@@ -131,12 +131,6 @@
 				<groupId>org.testcontainers</groupId>
 				<artifactId>testcontainers-junit-jupiter</artifactId>
 				<version>${testcontainers.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.junit.jupiter</groupId>
-						<artifactId>junit-jupiter-api</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
