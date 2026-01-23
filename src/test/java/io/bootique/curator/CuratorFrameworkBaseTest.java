@@ -30,7 +30,7 @@ import org.apache.curator.framework.recipes.shared.SharedCount;
 import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.GenericContainer;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 @BQTest
