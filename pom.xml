@@ -23,7 +23,7 @@
 	<parent>
 		<groupId>io.bootique.modules.parent</groupId>
 		<artifactId>bootique-modules-parent</artifactId>
-		<version>4.0.3</version>
+		<version>4.0.4</version>
 	</parent>
 
 	<groupId>io.bootique.curator</groupId>
@@ -124,7 +124,7 @@
 			</dependency>
 			<dependency>
 				<groupId>org.testcontainers</groupId>
-				<artifactId>junit-jupiter</artifactId>
+				<artifactId>testcontainers-junit-jupiter</artifactId>
 				<version>${testcontainers.version}</version>
 				<exclusions>
 					<exclusion>
@@ -194,7 +194,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.testcontainers</groupId>
-			<artifactId>junit-jupiter</artifactId>
+			<artifactId>testcontainers-junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
