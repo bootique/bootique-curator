@@ -1,3 +1,7 @@
+## 4.0-M4
+
+* #24 Bump org.apache.zookeeper:zookeeper from 3.9.4 to 3.9.5
+
 ## 4.0-M2
 
 * #21 Upgrade to Curator 5.9.0 and ZK 3.9.4
