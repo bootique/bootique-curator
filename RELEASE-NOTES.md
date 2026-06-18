@@ -1,6 +1,7 @@
 ## 4.0-M4
 
 * #24 Bump org.apache.zookeeper:zookeeper from 3.9.4 to 3.9.5
+* #28 Upgrade to Netty 4.1.135.Final
 
 ## 4.0-M2
 
