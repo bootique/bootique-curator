@@ -39,7 +39,7 @@
 		<zookeeper.version>3.9.5</zookeeper.version>
 		<netty.version>4.1.135.Final</netty.version>
 		<guava.version>33.4.8-jre</guava.version>
-		<commons.io.version>2.19.0</commons.io.version>
+		<commons.io.version>2.21.0</commons.io.version>
 	</properties>
 
 	<scm>
